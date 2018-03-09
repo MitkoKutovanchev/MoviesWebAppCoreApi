@@ -1,0 +1,15 @@
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\MoviesWEbAppApi.deps.json
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\MoviesWEbAppApi.runtimeconfig.json
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\MoviesWEbAppApi.runtimeconfig.dev.json
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\MoviesWEbAppApi.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\MoviesWEbAppApi.pdb
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.csprojResolveAssemblyReference.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.csproj.CoreCompileInputs.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.AssemblyInfoInputs.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.AssemblyInfo.cs
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\obj\Debug\netcoreapp2.0\MoviesWEbAppApi.pdb
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\Data.Entity.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\Data.Entity.pdb

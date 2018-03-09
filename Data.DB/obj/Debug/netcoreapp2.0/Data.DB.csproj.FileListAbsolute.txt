@@ -1,0 +1,11 @@
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\bin\Debug\netcoreapp2.0\Data.Entity.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.csprojResolveAssemblyReference.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.csproj.CoreCompileInputs.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.AssemblyInfoInputs.cache
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.AssemblyInfo.cs
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\bin\Debug\netcoreapp2.0\Data.DB.deps.json
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\bin\Debug\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\bin\Debug\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\bin\Debug\netcoreapp2.0\Data.Entity.pdb
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebApp\moviesWebApp\Data.DB\obj\Debug\netcoreapp2.0\Data.DB.pdb

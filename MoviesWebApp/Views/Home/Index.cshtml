@@ -1,0 +1,37 @@
+﻿@model MoviesWebApp.Models.IndexMoviesViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr width=100%>
+            FEATURED MOVIES:
+
+            @foreach (var movie in Model.moviesForVm)
+    {
+
+        <td width="35%">
+            <div class="movie" margin="60%">
+                <div class="movie-image"> <span class="play"><span class="name">@movie.Name</span></span> <a href="#"><img src=@movie.imgUrl alt="" /></a> </div>
+                <br>
+                <div class="rating">
+                    <p>IMDB Score @movie.MovieIMDBScore</p>
+                    <p>RottenTomatoes Score @movie.MovieRottenTomatoesScore</p>
+                    <div class="stars">
+                        <div class="stars-in"> </div>
+                    </div>
+                    <span class="comments">12</span>
+                </div>
+            </div>
+        </td>
+}
+        </tr>
+    </tbody>
+</table>
