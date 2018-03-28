@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesWebApp", "moviesWebApp\MoviesWebApp.csproj", "{3F7B3048-E496-4620-B12E-2D5540693CC5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Entity", "Data.Entity\Data.Entity.csproj", "{65F4B19C-F4B1-4E9F-825D-38B372BCAC52}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.DB", "Data.DB\Data.DB.csproj", "{85BEF7FC-8741-4378-870C-1957A116D183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviesWEbAppApi", "MoviesWEbAppApi\MoviesWEbAppApi.csproj", "{CFB9AD0D-D772-45F9-89EB-14CCB583174B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesWEbAppApi", "MoviesWEbAppApi\MoviesWEbAppApi.csproj", "{CFB9AD0D-D772-45F9-89EB-14CCB583174B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F7B3048-E496-4620-B12E-2D5540693CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F7B3048-E496-4620-B12E-2D5540693CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F7B3048-E496-4620-B12E-2D5540693CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F7B3048-E496-4620-B12E-2D5540693CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65F4B19C-F4B1-4E9F-825D-38B372BCAC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65F4B19C-F4B1-4E9F-825D-38B372BCAC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65F4B19C-F4B1-4E9F-825D-38B372BCAC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
