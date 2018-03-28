@@ -15,7 +15,7 @@ namespace Data.Entity.Entities
 
         public Actor()
         {
-
+            this._id = null ?? new CustomId();
         }
 
         public Actor(string fname, string lname, CustomId id = null)

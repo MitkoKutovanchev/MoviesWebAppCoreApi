@@ -22,7 +22,7 @@ namespace Data.DB.Migrations
 
             modelBuilder.Entity("Data.Entity.Entities.Actor", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("FirstName");
@@ -36,11 +36,11 @@ namespace Data.DB.Migrations
 
             modelBuilder.Entity("Data.Entity.Entities.ActorMovie", b =>
                 {
-                    b.Property<int>("ActorId");
+                    b.Property<string>("ActorId");
 
-                    b.Property<int>("MovieId");
+                    b.Property<string>("MovieId");
 
-                    b.Property<int>("Id");
+                    b.Property<string>("Id");
 
                     b.HasKey("ActorId", "MovieId");
 
@@ -51,10 +51,10 @@ namespace Data.DB.Migrations
 
             modelBuilder.Entity("Data.Entity.Entities.ImgUrls", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("MovieId");
+                    b.Property<string>("MovieId");
 
                     b.Property<string>("Url");
 
@@ -67,7 +67,7 @@ namespace Data.DB.Migrations
 
             modelBuilder.Entity("Data.Entity.Entities.Movie", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("MovieDesc");
@@ -84,7 +84,7 @@ namespace Data.DB.Migrations
 
                     b.Property<DateTime>("ReleaseDate");
 
-                    b.Property<int?>("UserId");
+                    b.Property<string>("UserId");
 
                     b.Property<string>("imgUrl");
 
@@ -97,7 +97,7 @@ namespace Data.DB.Migrations
 
             modelBuilder.Entity("Data.Entity.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("AvatarUrl");
@@ -109,8 +109,6 @@ namespace Data.DB.Migrations
                     b.Property<string>("Password");
 
                     b.Property<string>("Username");
-
-                    b.Property<string>("apiIdPlaceholder");
 
                     b.HasKey("Id");
 

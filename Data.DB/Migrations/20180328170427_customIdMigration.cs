@@ -1,11 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
 namespace Data.DB.Migrations
 {
-    public partial class migration67 : Migration
+    public partial class customIdMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,8 +12,7 @@ namespace Data.DB.Migrations
                 name: "Actors",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<string>(nullable: false),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true)
                 },
@@ -27,14 +25,12 @@ namespace Data.DB.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<string>(nullable: false),
                     AvatarUrl = table.Column<string>(nullable: true),
                     EMail = table.Column<string>(nullable: true),
                     IsAdmin = table.Column<bool>(nullable: false),
                     Password = table.Column<string>(nullable: true),
-                    Username = table.Column<string>(nullable: true),
-                    apiIdPlaceholder = table.Column<string>(nullable: true)
+                    Username = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -45,8 +41,7 @@ namespace Data.DB.Migrations
                 name: "Movies",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Id = table.Column<string>(nullable: false),
                     MovieDesc = table.Column<string>(nullable: true),
                     MovieIMDBScore = table.Column<double>(nullable: false),
                     MovieIMDBUrl = table.Column<string>(nullable: true),
@@ -54,7 +49,7 @@ namespace Data.DB.Migrations
                     MovieRottenTomatoesUrl = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     ReleaseDate = table.Column<DateTime>(nullable: false),
-                    UserId = table.Column<int>(nullable: true),
+                    UserId = table.Column<string>(nullable: true),
                     imgUrl = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -72,9 +67,9 @@ namespace Data.DB.Migrations
                 name: "ActorMovies",
                 columns: table => new
                 {
-                    ActorId = table.Column<int>(nullable: false),
-                    MovieId = table.Column<int>(nullable: false),
-                    Id = table.Column<int>(nullable: false)
+                    ActorId = table.Column<string>(nullable: false),
+                    MovieId = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -97,9 +92,8 @@ namespace Data.DB.Migrations
                 name: "Urls",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    MovieId = table.Column<int>(nullable: true),
+                    Id = table.Column<string>(nullable: false),
+                    MovieId = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -40,6 +40,7 @@ namespace Data.DB.Helpers.Seeds
                 "https://www.rottentomatoes.com/m/red_sparrow",
                 "Ballerina Dominika Egorova is recruited to 'Sparrow School,' a Russian intelligence service where she is forced to use her body as a weapon. Her first mission, targeting a C.I.A. agent, threatens to unravel the security of both nations."),
 
+
                 new Movie("Death Wish (2018)", 
                 DateTime.Parse("02.03.2018"), 
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkzNjU3MjE0MF5BMl5BanBnXkFtZTgwNTIyNDk0NDM@._V1_.jpg", 

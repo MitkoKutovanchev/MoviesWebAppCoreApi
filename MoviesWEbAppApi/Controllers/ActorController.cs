@@ -35,13 +35,13 @@ namespace MoviesWEbAppApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
-            if (actorRepo.Get(id) == null)
+            if (actorRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
-            return Ok(actorRepo.Get(id));
+            return Ok(actorRepo.Get(a => a.Id == id));
         }
 
         [HttpPost]
@@ -60,9 +60,7 @@ namespace MoviesWEbAppApi.Controllers
                 return Unauthorized();
             }
 
-            Actor actor = new Actor();
-            actor.FirstName = model.FirstName;
-            actor.LastName = model.LastName;
+            Actor actor = new Actor(model.FirstName, model.LastName);
 
             actorRepo.Insert(actor);
 
@@ -71,7 +69,7 @@ namespace MoviesWEbAppApi.Controllers
         }
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]ActorBindModel model)
+        public IActionResult Put(string id, [FromBody]ActorBindModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -86,12 +84,12 @@ namespace MoviesWEbAppApi.Controllers
                 return Unauthorized();
             }
 
-            if (actorRepo.Get(id) == null)
+            if (actorRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
 
-            Actor actor = actorRepo.Get(id);
+            Actor actor = actorRepo.Get(a => a.Id == id);
             actor.FirstName = model.FirstName;
             actor.LastName = model.LastName;
 
@@ -103,7 +101,7 @@ namespace MoviesWEbAppApi.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -113,7 +111,7 @@ namespace MoviesWEbAppApi.Controllers
             {
                 return Unauthorized();
             }
-            Actor actor = actorRepo.Get(id);
+            Actor actor = actorRepo.Get(a => a.Id == id);
 
             if (actor == null)
             {

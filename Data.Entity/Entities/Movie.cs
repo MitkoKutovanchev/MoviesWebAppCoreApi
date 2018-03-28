@@ -25,7 +25,7 @@ namespace Data.Entity.Entities
 
         public Movie()
         {
-
+            this._id = null ?? new CustomId();
         }
 
         public Movie(string name, DateTime releaseDate, string imgURL, double iMDBScore, string iMDBUrl, double rottenTomatoesScore, string rottenTomatoesUrl, string description, CustomId id = null)

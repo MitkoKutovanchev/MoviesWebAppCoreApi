@@ -44,8 +44,7 @@ namespace MoviesWEbAppApi.Controllers
                     EMail = user.EMail,
                     AvatarUrl = user.AvatarUrl,
                     IsAdmin = user.IsAdmin,
-                    WatchedMovies = user.WatchedMovies,
-                    apiIdPlaceholder = user.apiIdPlaceholder
+                    WatchedMovies = user.WatchedMovies
                 });
             }
             return Ok(usersModel);
@@ -55,20 +54,20 @@ namespace MoviesWEbAppApi.Controllers
         //Get User by Id
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
             if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-                HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id != id)
+                !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
             {
                 return Unauthorized();
             }
 
-            if (userRepo.Get(id)==null)
+            if (userRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
 
-            return Ok(userRepo.Get(id));
+            return Ok(userRepo.Get(a => a.Id == id));
         }
         //Register User
         // POST api/<controller>
@@ -80,15 +79,7 @@ namespace MoviesWEbAppApi.Controllers
                 return BadRequest();
             }
 
-            User user = new User();
-            user.Username = model.Username;
-            user.Password = model.Password;
-            user.EMail = model.EMail;
-
-            if (model.AvatarUrl != null)
-            {
-                user.AvatarUrl = model.AvatarUrl;
-            }
+            User user = new User(model.Username, model.Password, model.EMail, model.AvatarUrl);
 
             userRepo.Insert(user);
             return Ok(user);
@@ -96,7 +87,7 @@ namespace MoviesWEbAppApi.Controllers
         // Edit User
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]UserBindModel model)
+        public IActionResult Put(string id, [FromBody]UserBindModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -109,24 +100,23 @@ namespace MoviesWEbAppApi.Controllers
             }
 
             if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-                HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id != id)
+                !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
             {
                 return Unauthorized();
             }
 
-            if (userRepo.Get(id) == null)
+            if (userRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
 
-            User user = userRepo.Get(id);
+            User user = userRepo.Get(a => a.Id == id);
             user.Username = model.Username;
             user.Password = model.Password;
             user.IsAdmin = model.IsAdmin;
             user.WatchedMovies = model.WatchedMovies;
             user.EMail = model.EMail;
             user.AvatarUrl = model.AvatarUrl;
-            user.apiIdPlaceholder = model.apiIdPlaceholder;
 
             userRepo.Update(user);
             HttpContext.Session.SetObjectAsJson<User>("loggedUser", user);
@@ -137,17 +127,17 @@ namespace MoviesWEbAppApi.Controllers
         //Delete User
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
 
             if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-               HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id != id)
+               !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
             {
                 return Unauthorized();
             }
 
             User user = new User();
-            user = userRepo.Get(id);
+            user = userRepo.Get(a => a.Id == id);
             if (user == null)
             {
                 return NotFound();
@@ -177,20 +167,20 @@ namespace MoviesWEbAppApi.Controllers
 
         //Add a movie to the logged user's watched list
         [HttpPut("movies/{id}")]
-        public IActionResult AddMovieToWL(int id)
+        public IActionResult AddMovieToWL(string id)
         {
-            if(HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
+            if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
                 return Unauthorized();
             }
 
             User user = HttpContext.Session.GetObjectFromJson<User>("loggedUser");
 
-            if (movieRepo.Get(id) == null)
+            if (movieRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
-            user.WatchedMovies.Add(movieRepo.Get(id));
+            user.WatchedMovies.Add(movieRepo.Get(a => a.Id == id));
             HttpContext.Session.SetObjectAsJson<User>("loggedUser", user);
 
             return Ok(user.WatchedMovies);

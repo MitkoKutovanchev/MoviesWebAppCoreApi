@@ -10,7 +10,7 @@ namespace Data.Entity.Entities
 
         public ActorMovie()
         {
-
+            this._id = null ?? new CustomId();
         }
 
         public ActorMovie(Actor actor, Movie movie, CustomId id = null)

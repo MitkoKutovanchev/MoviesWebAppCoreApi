@@ -46,13 +46,13 @@ namespace MoviesWEbAppApi.Controllers
         // Get Movie By Id
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
-            if (movieRepo.Get(id) == null)
+            if (movieRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
-            return Ok(movieRepo.Get(id));
+            return Ok(movieRepo.Get(a => a.Id == id));
         }
         //Add Movie
         // POST api/<controller>
@@ -90,7 +90,7 @@ namespace MoviesWEbAppApi.Controllers
         //Edit Movie
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]MovieBindModel model)
+        public IActionResult Put(string id, [FromBody]MovieBindModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -105,12 +105,12 @@ namespace MoviesWEbAppApi.Controllers
                 return Unauthorized();
             }
 
-            if(movieRepo.Get(id) == null)
+            if (movieRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
 
-            Movie movie = movieRepo.Get(id);
+            Movie movie = movieRepo.Get(a => a.Id == id);
             movie.Name = model.Name;
             movie.ReleaseDate = model.ReleaseDate;
             movie.imgUrl = model.imgUrl;
@@ -128,7 +128,7 @@ namespace MoviesWEbAppApi.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(string id)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -138,7 +138,7 @@ namespace MoviesWEbAppApi.Controllers
             {
                 return Unauthorized();
             }
-            Movie movie = movieRepo.Get(id);
+            Movie movie = movieRepo.Get(a => a.Id == id);
 
             if (movie == null)
             {
@@ -152,7 +152,7 @@ namespace MoviesWEbAppApi.Controllers
 
         //Add an actor to the movie
         [HttpPut("{idM}/actors/{idA}")]
-        public IActionResult addActorToMovie(int idM, int idA)
+        public IActionResult addActorToMovie(string idM, string idA)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -163,14 +163,14 @@ namespace MoviesWEbAppApi.Controllers
                 return Unauthorized();
             }
 
-            if(movieRepo.Get(idM)==null || actorRepo.Get(idA) == null)
+            if (movieRepo.Get(a => a.Id == idM) == null || actorRepo.Get(a => a.Id == idA) == null)
             {
                 return NotFound();
             }
 
             ActorMovie actorMovie = new ActorMovie();
-            actorMovie.Actor = actorRepo.Get(idA);
-            actorMovie.Movie = movieRepo.Get(idM);
+            actorMovie.Actor = actorRepo.Get(a => a.Id == idA);
+            actorMovie.Movie = movieRepo.Get(a => a.Id == idM);
 
             actorMovieRepo.Insert(actorMovie);
 
@@ -178,23 +178,19 @@ namespace MoviesWEbAppApi.Controllers
         }
 
         [HttpGet("{id}/actors")]
-        public IActionResult viewActorsForMovie(int id)
+        public IActionResult viewActorsForMovie(string id)
         {
-            if (movieRepo.Get(id) == null)
+            if (movieRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
 
-            List <Actor> actorsList = new List<Actor>();
+            List<Actor> actorsList = new List<Actor>();
 
-            foreach (var actorMovie in movieRepo.Get(id).Actors)
+            foreach (var actorMovie in movieRepo.Get(a => a.Id == id).Actors)
             {
-                if(actorRepo.Get(actorMovie.ActorId) == null)
-                {
-                    return NotFound();
-                }
 
-                Actor actor = actorRepo.Get(actorMovie.ActorId);
+                Actor actor = actorRepo.Get(a => a.Id == actorMovie.ActorId);
                 actorsList.Add(actor);
             }
 

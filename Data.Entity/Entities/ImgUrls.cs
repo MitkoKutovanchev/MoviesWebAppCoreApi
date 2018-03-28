@@ -14,7 +14,7 @@ namespace Data.Entity.Entities
 
         public ImgUrls()
         {
-
+            this._id = null ?? new CustomId();
         }
 
         public ImgUrls(string url, Movie movie, CustomId id = null)
