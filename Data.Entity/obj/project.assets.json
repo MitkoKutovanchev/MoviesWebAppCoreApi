@@ -674,11 +674,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\mkuto\\Desktop\\moviesWebApp\\moviesWebApp\\Data.Entity\\Data.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.Entity\\Data.Entity.csproj",
       "projectName": "Data.Entity",
-      "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebApp\\moviesWebApp\\Data.Entity\\Data.Entity.csproj",
+      "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.Entity\\Data.Entity.csproj",
       "packagesPath": "C:\\Users\\mkuto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mkuto\\Desktop\\moviesWebApp\\moviesWebApp\\Data.Entity\\obj\\",
+      "outputPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
