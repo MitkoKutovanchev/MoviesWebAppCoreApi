@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Common.Extensions;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,7 +28,7 @@ namespace Data.Entity.Entities
 
         }
 
-        public Movie(string name, DateTime releaseDate, string imgURL, double iMDBScore, string iMDBUrl, double rottenTomatoesScore, string rottenTomatoesUrl, string description)
+        public Movie(string name, DateTime releaseDate, string imgURL, double iMDBScore, string iMDBUrl, double rottenTomatoesScore, string rottenTomatoesUrl, string description, CustomId id = null)
         {
             this.Name = name;
             this.ReleaseDate = releaseDate;
@@ -37,6 +38,7 @@ namespace Data.Entity.Entities
             this.MovieRottenTomatoesScore = rottenTomatoesScore;
             this.MovieRottenTomatoesUrl = rottenTomatoesUrl;
             this.MovieDesc = description;
+            this._id = id ?? new CustomId();
         }
     }
 }

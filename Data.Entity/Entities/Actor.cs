@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,10 +18,11 @@ namespace Data.Entity.Entities
 
         }
 
-        public Actor(string fname, string lname)
+        public Actor(string fname, string lname, CustomId id = null)
         {
             this.FirstName = fname;
             this.LastName = lname;
+            this._id = id ?? new CustomId();
         }
 
 
