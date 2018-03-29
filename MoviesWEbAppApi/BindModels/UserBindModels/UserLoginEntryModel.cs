@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoviesWEbAppApi.BindModels
 {
-    public class UserLoginBindModel
+    public class UserLoginEntryModel
     {
         [EmailAddress]
         public string EMail { get; set; }

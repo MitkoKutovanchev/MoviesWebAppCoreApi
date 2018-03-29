@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Data.Entity.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MoviesWEbAppApi.BindModels.UserBindModels
+namespace MoviesWEbAppApi.BindModels.MovieBindModels
 {
-    public class UserMovieBindModel
+    public class MovieViewModel : BaseEntity
     {
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }

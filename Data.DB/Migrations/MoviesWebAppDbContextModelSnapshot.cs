@@ -65,6 +65,32 @@ namespace Data.DB.Migrations
                     b.ToTable("Urls");
                 });
 
+            modelBuilder.Entity("Data.Entity.Entities.LogService.CustomException", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CustomInnerMessage");
+
+                    b.Property<string>("CustomInnerStackTrace");
+
+                    b.Property<string>("CustomMessage");
+
+                    b.Property<string>("CustomStackTrace");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<int>("HResult");
+
+                    b.Property<string>("HelpLink");
+
+                    b.Property<string>("Source");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomExceptions");
+                });
+
             modelBuilder.Entity("Data.Entity.Entities.Movie", b =>
                 {
                     b.Property<string>("Id")

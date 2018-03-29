@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.DB", "Data.DB\Data.DB.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoviesWEbAppApi", "MoviesWEbAppApi\MoviesWEbAppApi.csproj", "{CFB9AD0D-D772-45F9-89EB-14CCB583174B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{86BED828-EE4A-4937-B6DE-808D05C98580}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{86BED828-EE4A-4937-B6DE-808D05C98580}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0A15DC08-0F46-4B7C-A3BB-91A223954F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\LogService.csproj", "{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{86BED828-EE4A-4937-B6DE-808D05C98580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86BED828-EE4A-4937-B6DE-808D05C98580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86BED828-EE4A-4937-B6DE-808D05C98580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD} = {0A15DC08-0F46-4B7C-A3BB-91A223954F42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECE68460-AB80-41E6-A4CF-B9124C135C62}

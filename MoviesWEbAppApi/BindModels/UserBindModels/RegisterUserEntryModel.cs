@@ -1,19 +1,19 @@
-﻿using Common.Extensions;
-using Data.Entity.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MoviesWEbAppApi.BindModels
 {
-    public class UserBindModel : BaseEntity
+    public class RegisterUserEntryModel
     {
+        [Required]
         public string Username { get; set; }
+        [Required]
         public string Password { get; set; }
+        [EmailAddress]
         public string EMail { get; set; }
         public string AvatarUrl { get; set; }
-        public bool IsAdmin { get; set; }
-        public List<Movie> WatchedMovies { get; set; }
     }
 }

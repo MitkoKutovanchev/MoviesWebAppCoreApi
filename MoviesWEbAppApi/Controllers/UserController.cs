@@ -33,10 +33,10 @@ namespace MoviesWEbAppApi.Controllers
             {
                 return Unauthorized();
             }
-            List<UserBindModel> usersModel = new List<UserBindModel>();
+            List<UserViewModel> usersModel = new List<UserViewModel>();
             foreach (User user in userRepo.GetAll())
             {
-                usersModel.Add(new UserBindModel()
+                usersModel.Add(new UserViewModel()
                 {
                     Id = user.Id,
                     Username = user.Username,
@@ -72,7 +72,7 @@ namespace MoviesWEbAppApi.Controllers
         //Register User
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Post([FromBody]RegisterUserBindModel model)
+        public IActionResult Post([FromBody]RegisterUserEntryModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace MoviesWEbAppApi.Controllers
         // Edit User
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody]UserBindModel model)
+        public IActionResult Put(string id, [FromBody]UserViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -150,7 +150,7 @@ namespace MoviesWEbAppApi.Controllers
 
         //Login 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] UserLoginBindModel model)
+        public IActionResult Login([FromBody] UserLoginEntryModel model)
         {
             User loggedUser = userRepo.Get(a => a.EMail == model.EMail && a.Password == model.password);
 
@@ -195,10 +195,10 @@ namespace MoviesWEbAppApi.Controllers
             }
 
             User user = HttpContext.Session.GetObjectFromJson<User>("loggedUser");
-            List<UserMovieBindModel> watchedMoviesList = new List<UserMovieBindModel>();
+            List<UserMovieViewModel> watchedMoviesList = new List<UserMovieViewModel>();
             foreach (var movie in user.WatchedMovies)
             {
-                watchedMoviesList.Add(new UserMovieBindModel
+                watchedMoviesList.Add(new UserMovieViewModel
                 {
                     Name = movie.Name,
                     ReleaseDate = movie.ReleaseDate,

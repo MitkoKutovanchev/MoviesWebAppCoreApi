@@ -21,12 +21,13 @@ namespace MoviesWEbAppApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<ActorBindModel> actorsModel = new List<ActorBindModel>();
+            List<ActorViewModel> actorsModel = new List<ActorViewModel>();
 
             foreach (var actor in actorRepo.GetAll())
             {
-                actorsModel.Add(new ActorBindModel
+                actorsModel.Add(new ActorViewModel
                 {
+                    Id = actor.Id,
                     FirstName = actor.FirstName,
                     LastName = actor.LastName
                 });
@@ -45,7 +46,7 @@ namespace MoviesWEbAppApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]ActorBindModel model)
+        public IActionResult Post([FromBody]ActorViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -69,7 +70,7 @@ namespace MoviesWEbAppApi.Controllers
         }
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody]ActorBindModel model)
+        public IActionResult Put(string id, [FromBody]ActorViewModel model)
         {
             if (!ModelState.IsValid)
             {

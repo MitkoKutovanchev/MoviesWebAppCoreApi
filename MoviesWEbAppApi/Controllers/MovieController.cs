@@ -25,12 +25,13 @@ namespace MoviesWEbAppApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<MovieBindModel> moviesModel = new List<MovieBindModel>();
+            List<MovieViewModel> moviesModel = new List<MovieViewModel>();
 
             foreach (var movie in movieRepo.GetAll())
             {
-                moviesModel.Add(new MovieBindModel
+                moviesModel.Add(new MovieViewModel
                 {
+                    Id = movie.Id,
                     Name = movie.Name,
                     ReleaseDate = movie.ReleaseDate,
                     imgUrl = movie.imgUrl,
@@ -57,7 +58,7 @@ namespace MoviesWEbAppApi.Controllers
         //Add Movie
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Post([FromBody]MovieBindModel model)
+        public IActionResult Post([FromBody]MovieViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -90,7 +91,7 @@ namespace MoviesWEbAppApi.Controllers
         //Edit Movie
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody]MovieBindModel model)
+        public IActionResult Put(string id, [FromBody]MovieViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -187,11 +188,13 @@ namespace MoviesWEbAppApi.Controllers
 
             List<Actor> actorsList = new List<Actor>();
 
-            foreach (var actorMovie in movieRepo.Get(a => a.Id == id).Actors)
+            foreach (var actorMovie in actorMovieRepo.GetAll())
             {
-
-                Actor actor = actorRepo.Get(a => a.Id == actorMovie.ActorId);
-                actorsList.Add(actor);
+                if (actorMovie.MovieId == id)
+                {
+                    Actor actor = actorRepo.Get(a => a.Id == actorMovie.ActorId);
+                    actorsList.Add(actor);
+                }
             }
 
             return Ok(actorsList);

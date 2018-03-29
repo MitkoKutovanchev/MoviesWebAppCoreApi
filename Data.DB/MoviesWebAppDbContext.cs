@@ -1,5 +1,6 @@
 ﻿using Data.DB.Helpers;
 using Data.Entity.Entities;
+using Data.Entity.Entities.LogService;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace Data.DB
         public DbSet<Actor> Actors { get; set; }
         public DbSet<ImgUrls> Urls { get; set; }
         public DbSet<ActorMovie> ActorMovies { get; set; }
+        public DbSet<CustomException> CustomExceptions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
