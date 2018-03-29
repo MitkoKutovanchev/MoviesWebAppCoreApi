@@ -13,7 +13,7 @@ namespace NotificationService
     {
         private ILog _logger = Logger.GetInstance;
        
-        private async Task SendEmailAsync(string email, string subject, string message)
+        public async Task SendEmailAsync(string email, string subject, string message)
         {
             try
             {

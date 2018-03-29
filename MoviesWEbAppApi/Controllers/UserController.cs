@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using MoviesWEbAppApi.BindModels;
 using MoviesWEbAppApi.BindModels.UserBindModels;
 using MoviesWEbAppApi.wwwroot.Extensions;
+using NotificationService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,6 +23,7 @@ namespace MoviesWEbAppApi.Controllers
         private ILog _logger = Logger.GetInstance;
         UserRepository userRepo = new UserRepository();
         MovieRepository movieRepo = new MovieRepository();
+        private NotificationManager _notificationManager = new NotificationManager();
 
         //Get All Users
         // GET: api/<controller>
@@ -151,6 +153,10 @@ namespace MoviesWEbAppApi.Controllers
                 user.AvatarUrl = model.AvatarUrl;
 
                 userRepo.Update(user);
+
+                await _notificationManager.SendEmailAsync(user.EMail, "your moviesWebApp account", "there have been changes" +
+                    "made to your moviesWebApp account on " + DateTime.Now + " if it wasnt you ... please contact our " +
+                    "user support ASAP");
             }
             catch (Exception ex)
             {

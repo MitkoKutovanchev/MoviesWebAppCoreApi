@@ -30,7 +30,8 @@
           "Microsoft.AspNetCore.All": "2.0.3",
           "Microsoft.AspNetCore.Session": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.1"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.1",
+          "NotificationService": "1.0.0"
         },
         "runtime": {
           "MoviesWEbAppApi.dll": {}
@@ -4135,6 +4136,17 @@
           "LogService.dll": {}
         }
       },
+      "NotificationService/1.0.0": {
+        "dependencies": {
+          "LogService": "1.0.0"
+        },
+        "runtime": {
+          "NotificationService.dll": {}
+        },
+        "compile": {
+          "NotificationService.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6658,6 +6670,11 @@
       "sha512": ""
     },
     "LogService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotificationService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

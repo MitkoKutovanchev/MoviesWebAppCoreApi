@@ -5116,6 +5116,19 @@
         "runtime": {
           "bin/placeholder/LogService.dll": {}
         }
+      },
+      "NotificationService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "LogService": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NotificationService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotificationService.dll": {}
+        }
       }
     }
   },
@@ -13258,6 +13271,11 @@
       "type": "project",
       "path": "../LogService/LogService.csproj",
       "msbuildProject": "../LogService/LogService.csproj"
+    },
+    "NotificationService/1.0.0": {
+      "type": "project",
+      "path": "../NotificationService/NotificationService.csproj",
+      "msbuildProject": "../NotificationService/NotificationService.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13269,7 +13287,8 @@
       "Microsoft.AspNetCore.All >= 2.0.3",
       "Microsoft.AspNetCore.Session >= 2.0.1",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.1"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.1",
+      "NotificationService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13313,6 +13332,9 @@
             },
             "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.DB\\Data.DB.csproj": {
               "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.DB\\Data.DB.csproj"
+            },
+            "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\NotificationService\\NotificationService.csproj": {
+              "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\NotificationService\\NotificationService.csproj"
             },
             "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.Entity\\Data.Entity.csproj": {
               "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.Entity\\Data.Entity.csproj"

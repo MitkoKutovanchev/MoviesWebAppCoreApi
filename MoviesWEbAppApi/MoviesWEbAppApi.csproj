@@ -23,6 +23,7 @@
     <ProjectReference Include="..\Data.DB\Data.DB.csproj" />
     <ProjectReference Include="..\Data.Entity\Data.Entity.csproj" />
     <ProjectReference Include="..\LogService\LogService.csproj" />
+    <ProjectReference Include="..\NotificationService\NotificationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>
