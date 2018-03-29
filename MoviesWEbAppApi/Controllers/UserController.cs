@@ -30,14 +30,14 @@ namespace MoviesWEbAppApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
-            {
-                return Unauthorized();
-            }
-            if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin)
-            {
-                return Unauthorized();
-            }
+            //if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
+            //{
+            //    return Unauthorized();
+            //}
+            //if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin)
+            //{
+            //    return Unauthorized();
+            //}
             List<UserViewModel> usersModel = new List<UserViewModel>();
             try
             {
@@ -69,11 +69,11 @@ namespace MoviesWEbAppApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAsync(string id)
         {
-            if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-                !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
-            {
-                return Unauthorized();
-            }
+            //if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
+            //    !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
+            //{
+            //    return Unauthorized();
+            //}
 
             if (userRepo.Get(a => a.Id == id) == null)
             {
@@ -125,16 +125,15 @@ namespace MoviesWEbAppApi.Controllers
                 return BadRequest();
             }
 
-            if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
-            {
-                return Unauthorized();
-            }
-
-            if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-                !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
-            {
-                return Unauthorized();
-            }
+            //if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
+            //{
+            //    return Unauthorized();
+            //}
+            //if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
+            //    !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
+            //{
+            //    return Unauthorized();
+            //}
 
             if (userRepo.Get(a => a.Id == id) == null)
             {
@@ -154,8 +153,13 @@ namespace MoviesWEbAppApi.Controllers
 
                 userRepo.Update(user);
 
-                await _notificationManager.SendEmailAsync(user.EMail, "your moviesWebApp account", "there have been changes" +
-                    "made to your moviesWebApp account on " + DateTime.Now + " if it wasnt you ... please contact our " +
+                await _notificationManager.SendEmailAsync(
+                    user.EMail,
+                    "your moviesWebApp account", 
+                    "there have been changes" +
+                    "made to your moviesWebApp account on " 
+                    + DateTime.Now + 
+                    " if it wasnt you ... please contact our " +
                     "user support ASAP");
             }
             catch (Exception ex)
@@ -174,11 +178,11 @@ namespace MoviesWEbAppApi.Controllers
         public async Task<IActionResult> DeleteAsync(string id)
         {
 
-            if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
-               !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
-            {
-                return Unauthorized();
-            }
+            //if (!HttpContext.Session.GetObjectFromJson<User>("loggedUser").IsAdmin &&
+            //   !HttpContext.Session.GetObjectFromJson<User>("loggedUser").Id.Equals(id))
+            //{
+            //    return Unauthorized();
+            //}
 
             User user;
             try

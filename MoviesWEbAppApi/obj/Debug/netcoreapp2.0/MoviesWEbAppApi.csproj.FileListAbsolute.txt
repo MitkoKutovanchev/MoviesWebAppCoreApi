@@ -32,3 +32,5 @@ C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\ne
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\Common.pdb
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\LogService.dll
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\LogService.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\NotificationService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\MoviesWEbAppApi\bin\Debug\netcoreapp2.0\NotificationService.pdb

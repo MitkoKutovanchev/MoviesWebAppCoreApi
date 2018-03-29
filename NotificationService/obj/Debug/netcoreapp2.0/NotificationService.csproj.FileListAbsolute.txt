@@ -1,0 +1,17 @@
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\NotificationService.deps.json
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\NotificationService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\NotificationService.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Common.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Data.Entity.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\LogService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\LogService.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Data.Entity.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Common.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\bin\Debug\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.csprojResolveAssemblyReference.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.csproj.CoreCompileInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.AssemblyInfoInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.AssemblyInfo.cs
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\NotificationService\obj\Debug\netcoreapp2.0\NotificationService.pdb

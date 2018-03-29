@@ -32,6 +32,19 @@ namespace MoviesWEbAppApi
             services.AddMvc()
                 .AddSessionStateTempDataProvider();
 
+            services.AddMvcCore()
+        .AddAuthorization()
+        .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+        .AddIdentityServerAuthentication(options =>
+        {
+            options.Authority = "http://localhost:5000";
+            options.RequireHttpsMetadata = false;
+            options.ApiName = "Api1";
+        });
+
+            services.AddAuthorization(options => options.AddPolicy("admin", policy => policy.RequireClaim("admin", "admin")));
 
             services.AddSession();
         }

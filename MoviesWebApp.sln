@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "NotificationService\NotificationService.csproj", "{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerQuickStart", "IdentityServerQuickStart\IdentityServerQuickStart.csproj", "{C4046081-6BE7-4D33-B7BA-DA32FFBC1F94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4046081-6BE7-4D33-B7BA-DA32FFBC1F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4046081-6BE7-4D33-B7BA-DA32FFBC1F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4046081-6BE7-4D33-B7BA-DA32FFBC1F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4046081-6BE7-4D33-B7BA-DA32FFBC1F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
