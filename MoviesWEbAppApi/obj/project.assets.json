@@ -5103,6 +5103,19 @@
         "runtime": {
           "bin/placeholder/Data.Entity.dll": {}
         }
+      },
+      "LogService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Data.DB": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/LogService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogService.dll": {}
+        }
       }
     }
   },
@@ -13240,12 +13253,18 @@
       "type": "project",
       "path": "../Data.Entity/Data.Entity.csproj",
       "msbuildProject": "../Data.Entity/Data.Entity.csproj"
+    },
+    "LogService/1.0.0": {
+      "type": "project",
+      "path": "../LogService/LogService.csproj",
+      "msbuildProject": "../LogService/LogService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Data.DB >= 1.0.0",
       "Data.Entity >= 1.0.0",
+      "LogService >= 1.0.0",
       "Microsoft.AspNet.WebApi.WebHost >= 5.2.4",
       "Microsoft.AspNetCore.All >= 2.0.3",
       "Microsoft.AspNetCore.Session >= 2.0.1",
@@ -13289,6 +13308,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\LogService\\LogService.csproj": {
+              "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\LogService\\LogService.csproj"
+            },
             "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.DB\\Data.DB.csproj": {
               "projectPath": "C:\\Users\\mkuto\\Desktop\\moviesWebAppApi\\moviesWebApp\\Data.DB\\Data.DB.csproj"
             },

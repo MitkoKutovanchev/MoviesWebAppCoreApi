@@ -25,6 +25,7 @@
         "dependencies": {
           "Data.DB": "1.0.0",
           "Data.Entity": "1.0.0",
+          "LogService": "1.0.0",
           "Microsoft.AspNet.WebApi.WebHost": "5.2.4",
           "Microsoft.AspNetCore.All": "2.0.3",
           "Microsoft.AspNetCore.Session": "2.0.1",
@@ -4091,6 +4092,14 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        },
+        "compile": {
+          "Common.dll": {}
+        }
+      },
       "Data.DB/1.0.0": {
         "dependencies": {
           "Data.Entity": "1.0.0",
@@ -4105,11 +4114,25 @@
         }
       },
       "Data.Entity/1.0.0": {
+        "dependencies": {
+          "Common": "1.0.0"
+        },
         "runtime": {
           "Data.Entity.dll": {}
         },
         "compile": {
           "Data.Entity.dll": {}
+        }
+      },
+      "LogService/1.0.0": {
+        "dependencies": {
+          "Data.DB": "1.0.0"
+        },
+        "runtime": {
+          "LogService.dll": {}
+        },
+        "compile": {
+          "LogService.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.0.0": {
@@ -6619,12 +6642,22 @@
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512",
       "runtimeStoreManifestName": "aspnetcore-store-2.0.0-linux-x64.xml;aspnetcore-store-2.0.0-osx-x64.xml;aspnetcore-store-2.0.0-win7-x64.xml;aspnetcore-store-2.0.0-win7-x86.xml"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Data.DB/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "Data.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

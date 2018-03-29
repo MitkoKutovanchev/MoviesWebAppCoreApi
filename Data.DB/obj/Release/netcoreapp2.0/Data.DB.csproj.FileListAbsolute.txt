@@ -9,3 +9,5 @@ C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\obj\Release\netcorea
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\obj\Release\netcoreapp2.0\Data.DB.AssemblyInfo.cs
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\obj\Release\netcoreapp2.0\Data.DB.dll
 C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\obj\Release\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\bin\Release\netcoreapp2.0\Common.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\Data.DB\bin\Release\netcoreapp2.0\Common.pdb

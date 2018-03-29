@@ -8,10 +8,16 @@
     ".NETCoreApp,Version=v2.0": {
       "Data.Entity/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.0.1.0"
         },
         "runtime": {
           "Data.Entity.dll": {}
+        }
+      },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore/2.0.1.0": {
@@ -23,6 +29,11 @@
   },
   "libraries": {
     "Data.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

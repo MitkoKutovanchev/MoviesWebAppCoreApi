@@ -1,0 +1,15 @@
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\LogService.deps.json
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\LogService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\LogService.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Common.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Data.Entity.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Data.Entity.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\bin\Release\netcoreapp2.0\Common.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.csprojResolveAssemblyReference.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.csproj.CoreCompileInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.AssemblyInfoInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.AssemblyInfo.cs
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\LogService\obj\Release\netcoreapp2.0\LogService.pdb

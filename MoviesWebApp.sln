@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\LogService.csproj", "{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "NotificationService\NotificationService.csproj", "{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,12 +43,17 @@ Global
 		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D6DF9A8A-672D-47B7-BED3-6BD4292F73FD} = {0A15DC08-0F46-4B7C-A3BB-91A223954F42}
+		{98DE5A40-EBB3-432E-8C0E-F10B214C4F8D} = {0A15DC08-0F46-4B7C-A3BB-91A223954F42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ECE68460-AB80-41E6-A4CF-B9124C135C62}

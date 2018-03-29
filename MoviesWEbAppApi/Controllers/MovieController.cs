@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Data.DB.Repositories;
 using Data.Entity.Entities;
+using Data.Entity.Entities.LogService;
+using LogService;
 using Microsoft.AspNetCore.Mvc;
 using MoviesWEbAppApi.BindModels.MovieBindModels;
 using MoviesWEbAppApi.wwwroot.Extensions;
@@ -15,7 +17,7 @@ namespace MoviesWEbAppApi.Controllers
     [Route("api/[controller]")]
     public class MovieController : Controller
     {
-
+        private ILog _logger = Logger.GetInstance;
         MovieRepository movieRepo = new MovieRepository();
         ActorRepository actorRepo = new ActorRepository();
         ActorMovieRepository actorMovieRepo = new ActorMovieRepository();
@@ -23,42 +25,61 @@ namespace MoviesWEbAppApi.Controllers
         //Get All Movies
         // GET: api/<controller>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> GetAsync()
         {
             List<MovieViewModel> moviesModel = new List<MovieViewModel>();
 
-            foreach (var movie in movieRepo.GetAll())
+            try
             {
-                moviesModel.Add(new MovieViewModel
+                foreach (var movie in movieRepo.GetAll())
                 {
-                    Id = movie.Id,
-                    Name = movie.Name,
-                    ReleaseDate = movie.ReleaseDate,
-                    imgUrl = movie.imgUrl,
-                    MovieIMDBScore = movie.MovieIMDBScore,
-                    MovieIMDBUrl = movie.MovieIMDBUrl,
-                    MovieRottenTomatoesScore = movie.MovieRottenTomatoesScore,
-                    MovieRottenTomatoesUrl = movie.MovieRottenTomatoesUrl,
-                    MovieDesc = movie.MovieDesc
-                });
+                    moviesModel.Add(new MovieViewModel
+                    {
+                        Id = movie.Id,
+                        Name = movie.Name,
+                        ReleaseDate = movie.ReleaseDate,
+                        imgUrl = movie.imgUrl,
+                        MovieIMDBScore = movie.MovieIMDBScore,
+                        MovieIMDBUrl = movie.MovieIMDBUrl,
+                        MovieRottenTomatoesScore = movie.MovieRottenTomatoesScore,
+                        MovieRottenTomatoesUrl = movie.MovieRottenTomatoesUrl,
+                        MovieDesc = movie.MovieDesc
+                    });
+                }
             }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
+
             return Ok(moviesModel);
         }
         // Get Movie By Id
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        public async Task<IActionResult> GetAsync(string id)
         {
             if (movieRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
+            }
+
+            try
+            {
+                movieRepo.Get(a => a.Id == id);
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
             }
             return Ok(movieRepo.Get(a => a.Id == id));
         }
         //Add Movie
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Post([FromBody]MovieViewModel model)
+        public async Task<IActionResult> PostAsync([FromBody]MovieViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -73,25 +94,33 @@ namespace MoviesWEbAppApi.Controllers
                 return Unauthorized();
             }
 
-            Movie movie = new Movie();
-            movie.Name = model.Name;
-            movie.ReleaseDate = model.ReleaseDate;
-            movie.imgUrl = model.imgUrl;
-            movie.MovieIMDBScore = model.MovieIMDBScore;
-            movie.MovieIMDBUrl = model.MovieIMDBUrl;
-            movie.MovieRottenTomatoesScore = model.MovieRottenTomatoesScore;
-            movie.MovieRottenTomatoesUrl = model.MovieRottenTomatoesUrl;
-            movie.MovieDesc = model.MovieDesc;
+            Movie movie;
+            try
+            {
+                movie = new Movie(
+                    model.Name,
+                    model.ReleaseDate,
+                    model.imgUrl,
+                    model.MovieIMDBScore,
+                    model.MovieIMDBUrl,
+                    model.MovieRottenTomatoesScore,
+                    model.MovieRottenTomatoesUrl,
+                    model.MovieDesc);
 
-            movieRepo.Insert(movie);
-
+                movieRepo.Insert(movie);
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
             return Ok(movie);
 
         }
         //Edit Movie
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody]MovieViewModel model)
+        public async Task<IActionResult> PutAsync(string id, [FromBody]MovieViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -112,16 +141,24 @@ namespace MoviesWEbAppApi.Controllers
             }
 
             Movie movie = movieRepo.Get(a => a.Id == id);
-            movie.Name = model.Name;
-            movie.ReleaseDate = model.ReleaseDate;
-            movie.imgUrl = model.imgUrl;
-            movie.MovieIMDBScore = model.MovieIMDBScore;
-            movie.MovieIMDBUrl = model.MovieIMDBUrl;
-            movie.MovieRottenTomatoesScore = model.MovieRottenTomatoesScore;
-            movie.MovieRottenTomatoesUrl = model.MovieRottenTomatoesUrl;
-            movie.MovieDesc = model.MovieDesc;
+            try
+            {
+                movie.Name = model.Name;
+                movie.ReleaseDate = model.ReleaseDate;
+                movie.imgUrl = model.imgUrl;
+                movie.MovieIMDBScore = model.MovieIMDBScore;
+                movie.MovieIMDBUrl = model.MovieIMDBUrl;
+                movie.MovieRottenTomatoesScore = model.MovieRottenTomatoesScore;
+                movie.MovieRottenTomatoesUrl = model.MovieRottenTomatoesUrl;
+                movie.MovieDesc = model.MovieDesc;
 
-            movieRepo.Update(movie);
+                movieRepo.Update(movie);
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
 
             return Ok(movieRepo);
 
@@ -129,7 +166,7 @@ namespace MoviesWEbAppApi.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -146,14 +183,22 @@ namespace MoviesWEbAppApi.Controllers
                 return NotFound();
             }
 
-            movieRepo.Delete(movie);
-
+            try
+            {
+                movieRepo.Delete(movie);
+            }
+            catch(Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
+           
             return Ok(movie);
         }
 
         //Add an actor to the movie
         [HttpPut("{idM}/actors/{idA}")]
-        public IActionResult addActorToMovie(string idM, string idA)
+        public async Task<IActionResult> addActorToMovieAsync(string idM, string idA)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -170,16 +215,25 @@ namespace MoviesWEbAppApi.Controllers
             }
 
             ActorMovie actorMovie = new ActorMovie();
+
+            try
+            {
             actorMovie.Actor = actorRepo.Get(a => a.Id == idA);
             actorMovie.Movie = movieRepo.Get(a => a.Id == idM);
 
             actorMovieRepo.Insert(actorMovie);
+            }
+            catch(Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
 
             return Ok(actorMovie);
         }
 
         [HttpGet("{id}/actors")]
-        public IActionResult viewActorsForMovie(string id)
+        public async Task<IActionResult> viewActorsForMovieAsync(string id)
         {
             if (movieRepo.Get(a => a.Id == id) == null)
             {
@@ -188,15 +242,22 @@ namespace MoviesWEbAppApi.Controllers
 
             List<Actor> actorsList = new List<Actor>();
 
-            foreach (var actorMovie in actorMovieRepo.GetAll())
+            try
             {
-                if (actorMovie.MovieId == id)
+                foreach (var actorMovie in actorMovieRepo.GetAll())
                 {
-                    Actor actor = actorRepo.Get(a => a.Id == actorMovie.ActorId);
-                    actorsList.Add(actor);
+                    if (actorMovie.MovieId == id)
+                    {
+                        Actor actor = actorRepo.Get(a => a.Id == actorMovie.ActorId);
+                        actorsList.Add(actor);
+                    }
                 }
             }
-
+            catch(Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
             return Ok(actorsList);
 
         }

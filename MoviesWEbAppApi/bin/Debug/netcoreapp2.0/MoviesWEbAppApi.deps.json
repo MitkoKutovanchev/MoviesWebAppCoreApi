@@ -25,6 +25,7 @@
         "dependencies": {
           "Data.DB": "1.0.0",
           "Data.Entity": "1.0.0",
+          "LogService": "1.0.0",
           "Microsoft.AspNet.WebApi.WebHost": "5.2.4",
           "Microsoft.AspNetCore.All": "2.0.3",
           "Microsoft.AspNetCore.Session": "2.0.1",
@@ -4123,6 +4124,17 @@
           "Data.Entity.dll": {}
         }
       },
+      "LogService/1.0.0": {
+        "dependencies": {
+          "Data.DB": "1.0.0"
+        },
+        "runtime": {
+          "LogService.dll": {}
+        },
+        "compile": {
+          "LogService.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6467,6 +6479,11 @@
       "sha512": ""
     },
     "Data.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

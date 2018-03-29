@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Data.DB.Repositories;
 using Data.Entity.Entities;
+using Data.Entity.Entities.LogService;
+using LogService;
 using Microsoft.AspNetCore.Mvc;
 using MoviesWEbAppApi.BindModels;
 using MoviesWEbAppApi.wwwroot.Extensions;
@@ -16,37 +18,58 @@ namespace MoviesWEbAppApi.Controllers
     public class ActorController : Controller
     {
 
+        private ILog _logger = Logger.GetInstance;
+
         ActorRepository actorRepo = new ActorRepository();
         // GET: api/<controller>
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> GetAsync()
         {
             List<ActorViewModel> actorsModel = new List<ActorViewModel>();
 
-            foreach (var actor in actorRepo.GetAll())
+            try
             {
-                actorsModel.Add(new ActorViewModel
+                foreach (var actor in actorRepo.GetAll())
                 {
-                    Id = actor.Id,
-                    FirstName = actor.FirstName,
-                    LastName = actor.LastName
-                });
+                    actorsModel.Add(new ActorViewModel
+                    {
+                        Id = actor.Id,
+                        FirstName = actor.FirstName,
+                        LastName = actor.LastName
+                    });
+                }
+
             }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
+
             return Ok(actorsModel);
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        public async Task<IActionResult> GetAsync(string id)
         {
             if (actorRepo.Get(a => a.Id == id) == null)
             {
                 return NotFound();
             }
+            try
+            {
+                actorRepo.Get(a => a.Id == id);
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
             return Ok(actorRepo.Get(a => a.Id == id));
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]ActorViewModel model)
+        public async Task<IActionResult> PostAsync([FromBody]ActorViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -60,17 +83,26 @@ namespace MoviesWEbAppApi.Controllers
             {
                 return Unauthorized();
             }
+            Actor actor;
+            try
+            {
+                actor = new Actor(model.FirstName, model.LastName);
 
-            Actor actor = new Actor(model.FirstName, model.LastName);
+                actorRepo.Insert(actor);
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
 
-            actorRepo.Insert(actor);
 
             return Ok(actor);
 
         }
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody]ActorViewModel model)
+        public async Task<IActionResult> PutAsync(string id, [FromBody]ActorViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -90,11 +122,20 @@ namespace MoviesWEbAppApi.Controllers
                 return NotFound();
             }
 
-            Actor actor = actorRepo.Get(a => a.Id == id);
-            actor.FirstName = model.FirstName;
-            actor.LastName = model.LastName;
+            Actor actor;
+            try
+            {
+                actor = actorRepo.Get(a => a.Id == id);
+                actor.FirstName = model.FirstName;
+                actor.LastName = model.LastName;
 
-            actorRepo.Update(actor);
+                actorRepo.Update(actor);
+            }
+            catch(Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
 
             return Ok(actor);
 
@@ -102,7 +143,7 @@ namespace MoviesWEbAppApi.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> DeleteAsync(string id)
         {
             if (HttpContext.Session.GetObjectFromJson<User>("loggedUser") == null)
             {
@@ -112,14 +153,24 @@ namespace MoviesWEbAppApi.Controllers
             {
                 return Unauthorized();
             }
-            Actor actor = actorRepo.Get(a => a.Id == id);
-
-            if (actor == null)
+            Actor actor;
+            try
             {
-                return NotFound();
-            }
+                actor = actorRepo.Get(a => a.Id == id);
 
-            actorRepo.Delete(actor);
+                if (actor == null)
+                {
+                    return NotFound();
+                }
+
+                actorRepo.Delete(actor);
+
+            }
+            catch (Exception ex)
+            {
+                await _logger.LogCustomExceptionAsync(ex, null);
+                return BadRequest();
+            }
 
             return Ok(actor);
         }
