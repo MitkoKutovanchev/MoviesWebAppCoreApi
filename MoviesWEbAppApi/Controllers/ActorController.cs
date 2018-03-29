@@ -6,6 +6,7 @@ using Data.DB.Repositories;
 using Data.Entity.Entities;
 using Data.Entity.Entities.LogService;
 using LogService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MoviesWEbAppApi.BindModels;
 using MoviesWEbAppApi.wwwroot.Extensions;
@@ -14,6 +15,7 @@ using MoviesWEbAppApi.wwwroot.Extensions;
 
 namespace MoviesWEbAppApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     public class ActorController : Controller
     {

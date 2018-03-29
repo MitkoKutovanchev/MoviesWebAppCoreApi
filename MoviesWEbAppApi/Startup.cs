@@ -56,6 +56,7 @@ namespace MoviesWEbAppApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSession();
+                app.UseAuthentication();
                 app.UseMvc();
             }
 

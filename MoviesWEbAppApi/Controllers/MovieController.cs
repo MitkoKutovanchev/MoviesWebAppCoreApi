@@ -26,6 +26,7 @@ namespace MoviesWEbAppApi.Controllers
 
         //Get All Movies
         // GET: api/<controller>
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {

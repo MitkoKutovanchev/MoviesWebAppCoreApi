@@ -6,6 +6,7 @@ using Data.DB.Repositories;
 using Data.Entity.Entities;
 using Data.Entity.Entities.LogService;
 using LogService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MoviesWEbAppApi.BindModels;
@@ -17,6 +18,7 @@ using NotificationService;
 
 namespace MoviesWEbAppApi.Controllers
 {
+    [Authorize("admin")]
     [Route("api/[controller]")]
     public class UserController : Controller
     {
