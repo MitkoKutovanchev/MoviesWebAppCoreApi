@@ -15,7 +15,7 @@ using MoviesWEbAppApi.wwwroot.Extensions;
 
 namespace MoviesWEbAppApi.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
     public class MovieController : Controller
     {
@@ -26,7 +26,7 @@ namespace MoviesWEbAppApi.Controllers
 
         //Get All Movies
         // GET: api/<controller>
-        [Authorize]
+        
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
@@ -41,7 +41,7 @@ namespace MoviesWEbAppApi.Controllers
                         Id = movie.Id,
                         Name = movie.Name,
                         ReleaseDate = movie.ReleaseDate,
-                        imgUrl = movie.imgUrl,
+                        ImgUrl = movie.ImgUrl,
                         MovieIMDBScore = movie.MovieIMDBScore,
                         MovieIMDBUrl = movie.MovieIMDBUrl,
                         MovieRottenTomatoesScore = movie.MovieRottenTomatoesScore,
@@ -103,7 +103,7 @@ namespace MoviesWEbAppApi.Controllers
                 movie = new Movie(
                     model.Name,
                     model.ReleaseDate,
-                    model.imgUrl,
+                    model.ImgUrl,
                     model.MovieIMDBScore,
                     model.MovieIMDBUrl,
                     model.MovieRottenTomatoesScore,
@@ -148,7 +148,7 @@ namespace MoviesWEbAppApi.Controllers
             {
                 movie.Name = model.Name;
                 movie.ReleaseDate = model.ReleaseDate;
-                movie.imgUrl = model.imgUrl;
+                movie.ImgUrl = model.ImgUrl;
                 movie.MovieIMDBScore = model.MovieIMDBScore;
                 movie.MovieIMDBUrl = model.MovieIMDBUrl;
                 movie.MovieRottenTomatoesScore = model.MovieRottenTomatoesScore;

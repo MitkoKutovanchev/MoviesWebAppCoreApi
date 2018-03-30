@@ -1,0 +1,17 @@
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\IdentityServerQuickStart.deps.json
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\IdentityServerQuickStart.runtimeconfig.json
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\IdentityServerQuickStart.runtimeconfig.dev.json
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\IdentityServerQuickStart.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\IdentityServerQuickStart.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Common.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Data.DB.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Data.Entity.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Data.DB.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Data.Entity.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\bin\Release\netcoreapp2.0\Common.pdb
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.csprojResolveAssemblyReference.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.csproj.CoreCompileInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.AssemblyInfoInputs.cache
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.AssemblyInfo.cs
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.dll
+C:\Users\mkuto\Desktop\moviesWebAppApi\moviesWebApp\IdentityServerQuickStart\obj\Release\netcoreapp2.0\IdentityServerQuickStart.pdb

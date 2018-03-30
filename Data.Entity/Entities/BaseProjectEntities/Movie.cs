@@ -12,7 +12,7 @@ namespace Data.Entity.Entities
 
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string imgUrl { get; set; }
+        public string ImgUrl { get; set; }
         public double MovieIMDBScore { get; set; }
         public string MovieIMDBUrl { get; set; }
         public double MovieRottenTomatoesScore { get; set; }
@@ -32,7 +32,7 @@ namespace Data.Entity.Entities
         {
             this.Name = name;
             this.ReleaseDate = releaseDate;
-            this.imgUrl = imgUrl;
+            this.ImgUrl = ImgUrl;
             this.MovieIMDBScore = iMDBScore;
             this.MovieIMDBUrl = iMDBUrl;
             this.MovieRottenTomatoesScore = rottenTomatoesScore;

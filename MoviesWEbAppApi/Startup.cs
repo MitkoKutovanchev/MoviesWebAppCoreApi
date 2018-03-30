@@ -39,7 +39,7 @@ namespace MoviesWEbAppApi
             services.AddAuthentication("Bearer")
         .AddIdentityServerAuthentication(options =>
         {
-            options.Authority = "http://localhost:5000";
+            options.Authority = "https://mitkosmovieswebappidentityserver.azurewebsites.net";
             options.RequireHttpsMetadata = false;
             options.ApiName = "Api1";
         });

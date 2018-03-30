@@ -10,7 +10,7 @@ namespace MoviesWEbAppApi.BindModels.MovieBindModels
     {
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string imgUrl { get; set; }
+        public string ImgUrl { get; set; }
         public double MovieIMDBScore { get; set; }
         public string MovieIMDBUrl { get; set; }
         public double MovieRottenTomatoesScore { get; set; }

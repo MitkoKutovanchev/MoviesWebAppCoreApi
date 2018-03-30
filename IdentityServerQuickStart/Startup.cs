@@ -21,6 +21,7 @@ namespace IdentityServerQuickStart
             .AddInMemoryClients(Config.GetClients())
             .AddTestUsers(Config.GetUsers())
             .AddProfileService<ProfileService>();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
